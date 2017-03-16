@@ -11,7 +11,7 @@ An IoT project with Microsoft Cognitive Services, Microsoft Azure and LUIS
     On failure 2.1.:
         return the error
 
-3. Request retrieved text data to LUIS: POST /publishedLUISApi
+3. Request retrieved text data to LUIS: POST /publishedLUIS²Api
     3.1. Get the returned data from LUIS
     On failure 3.1.:
         return the error
