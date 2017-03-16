@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html { 
+	padding: 0px; 
+	margin: 0px;
+}
+
+body {
+	color : white;
+	background-color: #272727;
+}
+
+.navbar {
+	background-color: black;
+	border: 0px;
+}
+
+.container-fluid .navbar-header a {
+	color: white;
+}
+
+
+
+.btn-success {
+	margin-right: 10px;
+}
+
+.btn-danger {
+	margin-left: 10px;
+}
+tbody tr .success {
+	color: #000000;
+}
+tbody tr .danger {
+	color: #000000;
+}
+
+.well {
+	background-color: #636363;
+	border-width: 3px;
+	border-color: black;
+}
+
+#control-pannel {
+	display: none;
+}

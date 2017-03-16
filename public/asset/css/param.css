@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html { 
+	padding: 0px; 
+	margin: 0px;
+}
+
+body {
+	color : white;
+	background-color: #272727;
+}
+
+.navbar {
+	background-color: black;
+	border: 0px;
+}
+
+.container-fluid .navbar-header a {
+	color: white;
+}
+
+.nav.navbar-nav.navbar-right li a {
+	color: white;
+}
+
+.nav.navbar-nav.navbar-right li a:hover {
+	background-color: #272727;
+}
+
+.not-active {
+   pointer-events: none;
+   cursor: default;
+}
+
+
+.row .col-md-6 .right {
+	text-align: right;
+}
+
+.nbb {
+	margin-top: 30px;
+}

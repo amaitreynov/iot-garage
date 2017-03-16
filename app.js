@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var express = require('express');
+var swig = require('swig');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -14,9 +15,14 @@ var users = require('./routes/users');
 
 var app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+// This is where all the magic happens!
+app.engine('html', swig.renderFile);
+
+app.set('view engine', 'html');
+app.set('views', __dirname + '/views');
+app.use('/public', express.static(path.join(__dirname, 'public')));
+app.set('view cache', false);
+swig.setDefaults({cache: false});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
