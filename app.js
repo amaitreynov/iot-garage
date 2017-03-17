@@ -9,9 +9,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var debug = require('debug')('iot-garage:server');
 var http = require('http');
+var azure = require('azure-storage');
+var nconf = require('nconf');
+const swig_moment = require('swig-moment')('fr'); // or just (); -> en
+nconf.env()
+    .file({ file: 'config.json', search: true });
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var admin = require('./routes/admin');
 
 var app = express();
 
@@ -23,6 +28,7 @@ app.set('views', __dirname + '/views');
 app.use('/public', express.static(path.join(__dirname, 'public')));
 app.set('view cache', false);
 swig.setDefaults({cache: false});
+swig.setFilter('mdate', swig_moment.date);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -33,7 +39,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/admin', admin);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

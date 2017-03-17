@@ -1,0 +1,6 @@
+{
+  "STORAGE_NAME": "ynoviotgaragedb2",
+  "STORAGE_KEY": "riBikjINsa6aGI2DpcpoQJ01NkXfM8aygW/Er9bUYHxpY4IjAJouPdH3ci+6wNVo/2r48nxscghazXaxaCqySA==",
+  "PARTITION_KEY": "orderslist",
+  "TABLE_NAME": "Commandes"
+}

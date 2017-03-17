@@ -102,6 +102,23 @@
             <button type="button" class="btn btn-success">Envoyer</button>
         </div>
     </div>
+    <hr>
+    <h1>{{title}}</h1>
+    <div>
+        <table border="1">
+            <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>
+                    <p>Constructeur: {{ order.Constructeur._ }} || Référence: {{ order.Reference._ }}</p>
+                    <p>CreatedDate: {{ order.Timestamp._|date('Y-m-d') }}</p>
+                    <p>PartitionKey: {{ order.PartitionKey._ }} || RowKey: {{ order.RowKey._ }}</p>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
     <div class="row">
         <hr>
         <div class="row">
